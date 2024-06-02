@@ -58,9 +58,10 @@ M.create_cpp_definition = function()
     local header_file = vim.api.nvim_buf_get_name(bufnr)
     local Path = require('plenary.path')
     local scan = require('plenary.scandir')
-    
+
     local function find_source_file(project_root, source_base_name)
         local found_files = {}
+
         scan.scan_dir(project_root, {
             depth = 10,
             search_pattern = source_base_name,
@@ -188,7 +189,7 @@ M.create_cpp_declaration = function()
 
         return found_files
     end
-    
+
     local search_paths = create_search_paths(cpp_file)
     local found_header_file = nil
     for _, path in ipairs(search_paths) do
@@ -222,7 +223,7 @@ M.create_cpp_declaration = function()
                 end
             end
         end
-        
+
         if not insert_line then
             -- If no class is found, insert at the end of the file
             insert_line = #lines
@@ -235,7 +236,7 @@ M.create_cpp_declaration = function()
                 end
             end
         end
-        
+
         -- Insert the function declaration
         vim.api.nvim_buf_set_lines(header_bufnr, insert_line, insert_line, false, { function_declaration })
     end

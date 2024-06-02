@@ -1,50 +1,56 @@
--- Set up lazy.nvim and configure plugins
-require('lazy').setup({
-    'github/copilot.vim',
-    'nvim-lua/plenary.nvim',
-    'farmergreg/vim-lastplace',
-    { 'junegunn/fzf', run = 'fzf#install()' },
-    'junegunn/fzf.vim',
-    'windwp/nvim-autopairs',
-    'sheerun/vim-polyglot',
-    { 'dracula/vim', as = 'dracula' },
-    'ryanoasis/vim-devicons',
-    'preservim/nerdtree',
-    'Xuyuanp/nerdtree-git-plugin',
-    'dense-analysis/ale',
-    'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer',
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/cmp-nvim-lua',
-    'saadparwaiz1/cmp_luasnip',
-    'L3MON4D3/LuaSnip',
-    'easymotion/vim-easymotion',
-    'vim-airline/vim-airline',
-    'vim-airline/vim-airline-themes',
-    'tpope/vim-commentary',
-    'tpope/vim-surround',
-    'sindrets/diffview.nvim',
-    'airblade/vim-gitgutter',
-    'tpope/vim-fugitive',
-    'Pocco81/auto-save.nvim',
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    'nvim-treesitter/nvim-treesitter-refactor',
-    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
-    { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install && yarn add tslib' },
-    'tpope/vim-abolish',
-    'j-hui/fidget.nvim',
-})
+-- Initialize packer.nvim
+vim.cmd [[packadd packer.nvim]]
+
+require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim' -- Packer can manage itself
+  use 'github/copilot.vim'
+  use 'nvim-lua/plenary.nvim'
+  use 'farmergreg/vim-lastplace'
+  use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
+  use 'junegunn/fzf.vim'
+  use 'windwp/nvim-autopairs'
+  use 'sheerun/vim-polyglot'
+  use { 'dracula/vim', as = 'dracula' }
+  use { 'morhetz/gruvbox', as = 'gruvbox'}
+  use 'nvim-tree/nvim-web-devicons'
+  use 'preservim/nerdtree'
+  use 'ryanoasis/vim-devicons'
+  use 'Xuyuanp/nerdtree-git-plugin'
+  use 'dense-analysis/ale'
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'L3MON4D3/LuaSnip'
+  use 'easymotion/vim-easymotion'
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-surround'
+  use 'sindrets/diffview.nvim'
+  use 'airblade/vim-gitgutter'
+  use 'tpope/vim-fugitive'
+  use 'Pocco81/auto-save.nvim'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'nvim-treesitter/nvim-treesitter-refactor'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install && yarn add tslib' }
+  use 'tpope/vim-abolish'
+  use 'j-hui/fidget.nvim'
+end)
 
 -- Load individual plugin configurations
 require('plugins.autopairs')
 require('plugins.auto-save')
 require('plugins.cmp')
 require('plugins.diffview')
-require('plugins.fidget')
 require('plugins.lspconfig')
 require('plugins.treesitter')
 require('plugins.diagnostics').setup()
+require('plugins.nvim-web-devicons')
+require('plugins.fidget')

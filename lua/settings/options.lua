@@ -21,7 +21,8 @@ vim.api.nvim_create_user_command('Rg', function(opts)
     vim.fn['fzf#vim#grep'](command, 1, vim.fn['fzf#vim#with_preview'](), opts.bang)
 end, { bang = true, nargs = '*' })
 vim.env.FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
-vim.env.FZF_DEFAULT_OPTS = '--bind=ctrl-j:down,ctrl-k:up --bind=?:toggle-preview --preview "echo {}"'
+vim.env.FZF_DEFAULT_OPTS = '--bind=ctrl-j:down,ctrl-k:up'
+vim.env.FZF_DEFAULT_OPTS = '--border=none --preview-window=border-none,wrap --bind=?:toggle-preview --preview "echo {}"'
 
 -- Colorscheme settings
 vim.cmd('syntax enable')

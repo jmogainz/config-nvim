@@ -1,2 +1,3 @@
-require('fidget').setup{}
-
+-- Configure fidget
+require('fidget').setup {
+}
