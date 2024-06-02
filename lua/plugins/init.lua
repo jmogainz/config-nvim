@@ -42,6 +42,8 @@ require('packer').startup(function(use)
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install && yarn add tslib' }
   use 'tpope/vim-abolish'
   use 'j-hui/fidget.nvim'
+  use 'MattesGroeger/vim-bookmarks'
+  use 'mg979/vim-visual-multi'
 end)
 
 -- Load individual plugin configurations
@@ -49,8 +51,8 @@ require('plugins.autopairs')
 require('plugins.auto-save')
 require('plugins.cmp')
 require('plugins.diffview')
-require('plugins.lspconfig')
-require('plugins.treesitter')
 require('plugins.diagnostics').setup()
-require('plugins.nvim-web-devicons')
 require('plugins.fidget')
+require('plugins.lspconfig')
+require('plugins.nvim-web-devicons')
+require('plugins.treesitter')

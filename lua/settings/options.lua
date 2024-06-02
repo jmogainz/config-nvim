@@ -13,6 +13,9 @@ vim.o.wrap = true
 vim.o.cursorline = true
 vim.o.timeoutlen = 300
 
+-- Bookmarks settings
+vim.g.bookmark_no_default_key_mappings = 1
+
 -- FZF settings
 vim.g.fzf_layout = { window = { width = 1.00, height = 1.00, wrap = true } }
 vim.api.nvim_create_user_command('Rg', function(opts)
