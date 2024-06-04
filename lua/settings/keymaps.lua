@@ -17,7 +17,7 @@ vim.api.nvim_set_keymap('n', '<Leader>e', '<cmd>lua vim.diagnostic.open_float()<
 vim.api.nvim_set_keymap('n', 'cd', '<Cmd>lua require("plugins.custom_functions").create_cpp_definition()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'cD', '<Cmd>lua require("plugins.custom_functions").create_cpp_declaration()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'cs', '<Cmd>lua require("plugins.custom_functions").copy_snippet_info()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'mm', ':BookmarkToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>mm', ':BookmarkToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>mi', ':BookmarkAnnotate<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>mn', ':BookmarkNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>mp', ':BookmarkPrev<CR>', { noremap = true, silent = true })
