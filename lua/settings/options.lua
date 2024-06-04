@@ -12,6 +12,7 @@ vim.o.hlsearch = true
 vim.o.wrap = true
 vim.o.cursorline = true
 vim.o.timeoutlen = 300
+vim.o.smartindent = false
 
 -- Bookmarks settings
 vim.g.bookmark_no_default_key_mappings = 1
@@ -58,8 +59,8 @@ vim.g.ale_cpp_clang_options = '-Wall -Wextra -Wpedantic -Wconversion -Wsign-conv
 vim.g.ale_cpp_gcc_options = '-std=c++17 -Wall -O2 -Wextra -Wpedantic -Wconversion -Wsign-conversion'
 vim.g.ale_cpp_cc_options = '-Wall -Wextra -Wpedantic Wsign-conversion -Wno-c++17-extensions'
 vim.g.ale_linters = {
-  cpp = {'clang', 'g++'},
-  python = {'flake8', 'pylint', 'mypy'}
+    cpp = {'clang', 'g++'},
+    python = {'flake8', 'pylint', 'mypy'}
 }
 vim.g.ale_verbose = 1
 
