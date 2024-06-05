@@ -41,11 +41,6 @@ if not vim.fn.isdirectory(target_path) then
 end
 vim.o.undodir = target_path
 
--- NERDTree settings
-vim.g.NERDTreeShowHidden = 1
-vim.g.NERDTreeQuitOnOpen = 1
-vim.g.NERDTreeWinSize = 80
-
 -- Copilot settings
 vim.g.copilot_enabled = 1
 vim.g.copilot_no_tab_map = true
@@ -64,3 +59,5 @@ vim.g.ale_linters = {
 }
 vim.g.ale_verbose = 1
 
+vim.g.undotree_SplitWidth = 60        -- Width of the undotree window
+vim.g.undotree_SetFocusWhenToggle = 1 -- Focus the undotree window when toggled

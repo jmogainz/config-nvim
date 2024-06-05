@@ -13,7 +13,7 @@ require('packer').startup(function(use)
   use { 'dracula/vim', as = 'dracula' }
   use { 'morhetz/gruvbox', as = 'gruvbox'}
   use 'nvim-tree/nvim-web-devicons'
-  use 'preservim/nerdtree'
+  use 'nvim-tree/nvim-tree.lua'
   use 'ryanoasis/vim-devicons'
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'dense-analysis/ale'
@@ -44,6 +44,7 @@ require('packer').startup(function(use)
   use 'j-hui/fidget.nvim'
   use 'MattesGroeger/vim-bookmarks'
   use 'mg979/vim-visual-multi'
+  use 'mbbill/undotree'
 end)
 
 -- Load individual plugin configurations
@@ -56,3 +57,4 @@ require('plugins.fidget')
 require('plugins.lspconfig')
 require('plugins.nvim-web-devicons')
 require('plugins.treesitter')
+require('plugins.nvim-tree')

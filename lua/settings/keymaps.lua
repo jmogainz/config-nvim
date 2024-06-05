@@ -33,3 +33,5 @@ vim.g.VM_maps = {
   ['Skip Region']        = 'Q',  -- Change to your preferred key
   ['Remove Last Region'] = 'R',  -- Change to your preferred key
 }
+vim.api.nvim_set_keymap('n', '<C-l>', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>u', ':UndotreeToggle<CR>', { noremap = true, silent = true })
