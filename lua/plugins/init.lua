@@ -14,7 +14,6 @@ require('packer').startup(function(use)
   use { 'morhetz/gruvbox', as = 'gruvbox'}
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-tree/nvim-tree.lua'
-  use 'ryanoasis/vim-devicons'
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'dense-analysis/ale'
   use 'neovim/nvim-lspconfig'
@@ -28,8 +27,6 @@ require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip'
   use 'easymotion/vim-easymotion'
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
   use 'sindrets/diffview.nvim'
@@ -45,6 +42,7 @@ require('packer').startup(function(use)
   use 'MattesGroeger/vim-bookmarks'
   use 'mg979/vim-visual-multi'
   use 'mbbill/undotree'
+  use 'nvim-lualine/lualine.nvim'
 end)
 
 -- Load individual plugin configurations
@@ -58,3 +56,4 @@ require('plugins.lspconfig')
 require('plugins.nvim-web-devicons')
 require('plugins.treesitter')
 require('plugins.nvim-tree')
+require('plugins.lualine')
