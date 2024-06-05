@@ -1,3 +1,7 @@
+vim.api.nvim_set_hl(0, 'NvimTreeGitDirty', { fg = '#ECBE7B' })
+vim.api.nvim_set_hl(0, 'NvimTreeGitNew', { fg = '#98be65' })
+vim.api.nvim_set_hl(0, 'NvimTreeGitDeleted', { fg = '#ec5f67' })
+
 require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
       on_attach = "default",
       hijack_cursor = false,
@@ -164,7 +168,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
       },
       filters = {
         enable = true,
-        git_ignored = true,
+        git_ignored = false,
         dotfiles = false,
         git_clean = false,
         no_buffer = false,
