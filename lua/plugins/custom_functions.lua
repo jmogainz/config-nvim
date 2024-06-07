@@ -246,16 +246,36 @@ M.create_cpp_declaration = function()
     insert_declaration()
 end
 
--- Copy snippet info function
 M.copy_snippet_info = function()
+    local start_time = vim.loop.hrtime()
+
     local file = vim.fn.expand('%')
-    local startline = vim.fn.line("'<")
-    local endline = vim.fn.line("'>")
+    local startline = vim.fn.line("v")
+    local endline = vim.fn.line(".")
+    if startline > endline then
+        startline, endline = endline, startline
+    end
+    print(string.format("Debug: file=%s, startline=%d, endline=%d", file, startline, endline))
+
     local lines = vim.fn.getline(startline, endline)
+    local mid_time = vim.loop.hrtime()
+    print(string.format("Time to get lines: %.2f ms", (mid_time - start_time) / 1e6))
+
+    if #lines == 0 then
+        print("No lines selected")
+        return
+    end
     local snippet = table.concat(lines, "\n")
     local formatted = string.format("File: %s\nLines: %d-%d\n\n%s", file, startline, endline, snippet)
+
+    local before_clipboard_time = vim.loop.hrtime()
     vim.fn.setreg('+', formatted)
+    local after_clipboard_time = vim.loop.hrtime()
+    print(string.format("Time to set clipboard: %.2f ms", (after_clipboard_time - before_clipboard_time) / 1e6))
+
     print("Snippet copied to clipboard")
+    local end_time = vim.loop.hrtime()
+    print(string.format("Total time: %.2f ms", (end_time - start_time) / 1e6))
 end
 
 return M
